@@ -1,0 +1,21 @@
+@use '../custom' as *;
+@use '../components/mixins' as *;
+
+.logo{
+    font-size: 2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.3rem
+}
+.menu{
+    @include gradient;
+    li{
+        padding: 0 0.7rem;
+
+        a{
+            color: $white !important;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+    }
+}

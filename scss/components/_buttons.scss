@@ -1,0 +1,43 @@
+@use '../custom' as *;  /* im usin the module because i used variable $primary from partial _custom*/ 
+@use '../components/mixins' as *; /* im usin the module because i used mixin gradient from mixins*/
+.btn-rounded{
+    @include media-breakpoint-down(sm){   /*this is mixin provided by bootstrap to write media queries media-breakpoint-either "down" or "up" this means min or max)(targeted devices)*/
+        display: none;
+    }
+
+    position: relative;
+    padding: 0.9375rem 1.5rem;
+    padding-right: 3rem !important;
+    font-weight: 700;
+    margin: 0;
+    border-radius: 0.1rem solid rgba($white , 0.6);
+    background-color: $white;
+    border: solid rgba(1,1,1,0.0);
+    transition: all 0.3s ease;
+
+    span{
+        position: absolute;
+        background-color: $primary;
+        border-radius: 50%;
+        width: 2.5rem;
+        height: 2.5rem;
+        top: 50%;
+        right: 5px;
+       transform: translateY(-50%);
+
+       i{
+           color: $white;
+           font-size: 1rem;
+           line-height: 2.5rem;
+       }
+    }
+
+    &:hover{
+        @include gradient;
+        color: $white;
+
+        span{
+            background-color: rgba($black, 0.6);
+        }
+    }
+}
